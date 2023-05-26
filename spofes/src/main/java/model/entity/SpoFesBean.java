@@ -19,7 +19,7 @@ public class SpoFesBean implements Serializable{
 	private String name;
 	
 	/**
-	 * 得点項目名
+	 * 得点項目
 	 */
 	private String taskName;
 	

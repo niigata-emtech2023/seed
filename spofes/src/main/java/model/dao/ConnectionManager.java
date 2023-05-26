@@ -1,5 +1,6 @@
 /**
  * model.dao.ConnectionManager.java
+ * @author i
  */
 
 package model.dao;
