@@ -1,3 +1,7 @@
+/**
+ * model.dao.ConnectionManager.java
+ */
+
 package model.dao;
 
 import java.sql.Connection;
