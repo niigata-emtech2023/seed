@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" import="model.entity.spoFesBean,java.util.List"%>
+    pageEncoding="UTF-8" import="model.entity.SpoFesBean,java.util.List"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +10,7 @@
 	<%@ include file="header.jsp" %>
 
 	<% 
-		List<spoFesBean> taskList = (List<spoFesBean>)request.getAttribute("taskList");
+		List<SpoFesBean> taskList = (List<SpoFesBean>)request.getAttribute("taskList");
 	
 	%>
 	
@@ -18,7 +18,7 @@
 	<table border>
 	<% int i = 1; %>
 	<%
-		for (spoFesBean task : taskList) {
+		for (SpoFesBean task : taskList) {
 	%>
 		<tr>
 			<td><%=i%></td>
