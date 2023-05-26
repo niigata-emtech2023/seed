@@ -120,8 +120,8 @@ public class SpoFesBean implements Serializable{
 	 * フィールドteamNameの値を設定します
 	 * @return
 	 */
-	public void setTeamName(String teanName) {
-		this.teamName = teanName;
+	public void setTeamName(String teamName) {
+		this.teamName = teamName;
 	}
 
 }
