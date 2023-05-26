@@ -19,6 +19,7 @@ public class SpoFesBean implements Serializable{
 	private String name;
 	
 	/**
+<<<<<<< HEAD
 	 * 得点項目名
 	 */
 	private String taskName;
@@ -122,6 +123,217 @@ public class SpoFesBean implements Serializable{
 	 */
 	public void setTeamName(String teanName) {
 		this.teamName = teanName;
+=======
+<<<<<<< HEAD
+	 * 得点項目名
+	 */
+	private String taskName;
+	
+	/**
+	 * 得点
+	 */
+	private int point;
+	
+	/**
+	 * 順位
+	 */
+	private int rank;
+	
+	/**
+	 * チーム名
+	 */
+	private String teamName;
+	
+	/**
+	 * SpoFesBeanの構築
+	 */
+	public SpoFesBean() {
+	}
+
+	/**
+	 * フィールドnameの値を返します
+	 * @return
+	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * フィールドnameの値を設定します
+	 * @return
+	 */
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	/**
+	 * フィールドtaskNameの値を返します
+	 * @return
+	 */
+	public String getTaskName() {
+		return taskName;
+	}
+	
+	/**
+	 * フィールドtaskNameの値を設定します
+	 * @return
+	 */
+	public void setTaskName(String taskName) {
+		this.taskName = taskName;
+	}
+
+	/**
+	 * フィールドpointの値を返します
+	 * @return
+	 */
+	public int getPoint() {
+		return point;
+	}
+
+	/**
+	 * フィールドpointの値を設定します
+	 * @return
+	 */
+	public void setPoint(int point) {
+		this.point = point;
+	}
+
+	/**
+	 * フィールドgetRankの値を返します
+	 * @return
+	 */
+	public int getRank() {
+		return rank;
+	}
+
+	/**
+	 * フィールドgetRankの値を設定します
+	 * @return
+	 */
+	public void setRank(int rank) {
+		this.rank = rank;
+	}
+
+	/**
+	 * フィールドteamNameの値を返します
+	 * @return
+	 */
+	public String getTeamName() {
+		return teamName;
+	}
+
+	/**
+	 * フィールドteamNameの値を設定します
+	 * @return
+	 */
+	public void setTeamName(String teanName) {
+		this.teamName = teanName;
+=======
+	 * 得点項目
+	 */
+	private String taskName;
+	
+	/**
+	 * 得点
+	 */
+	private int point;
+	
+	/**
+	 * 順位
+	 */
+	private int rank;
+	
+	/**
+	 * チーム名
+	 */
+	private String teamName;
+	
+	/**
+	 * SpoFesBeanの構築
+	 */
+	public SpoFesBean() {
+	}
+
+	/**
+	 * フィールドnameの値を返します
+	 * @return
+	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * フィールドnameの値を設定します
+	 * @return
+	 */
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	/**
+	 * フィールドtaskNameの値を返します
+	 * @return
+	 */
+	public String getTaskName() {
+		return taskName;
+	}
+	
+	/**
+	 * フィールドtaskNameの値を設定します
+	 * @return
+	 */
+	public void setTaskName(String taskName) {
+		this.taskName = taskName;
+	}
+
+	/**
+	 * フィールドpointの値を返します
+	 * @return
+	 */
+	public int getPoint() {
+		return point;
+	}
+
+	/**
+	 * フィールドpointの値を設定します
+	 * @return
+	 */
+	public void setPoint(int point) {
+		this.point = point;
+	}
+
+	/**
+	 * フィールドgetRankの値を返します
+	 * @return
+	 */
+	public int getRank() {
+		return rank;
+	}
+
+	/**
+	 * フィールドgetRankの値を設定します
+	 * @return
+	 */
+	public void setRank(int rank) {
+		this.rank = rank;
+	}
+
+	/**
+	 * フィールドteamNameの値を返します
+	 * @return
+	 */
+	public String getTeamName() {
+		return teamName;
+	}
+
+	/**
+	 * フィールドteamNameの値を設定します
+	 * @return
+	 */
+	public void setTeamName(String teamName) {
+		this.teamName = teamName;
+>>>>>>> branch 'master' of https://github.com/niigata-emtech2023/seed
+>>>>>>> branch 'master' of https://github.com/niigata-emtech2023/seed
 	}
 
 }
