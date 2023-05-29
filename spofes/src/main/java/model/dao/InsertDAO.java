@@ -29,11 +29,11 @@ public class InsertDAO {
 				PreparedStatement pstmt = con.prepareStatement(sql)) {
 
 			// DTOからのデータの取り出し
-			String taskName = bean.getTaskName();
+			String task_info = bean.getTaskName();
 
 			// プレースホルダへの値の設定
 			pstmt.setInt(1, task_id);
-			pstmt.setString(2, taskName);
+			pstmt.setString(2, task_info);
 
 			// SQLステートメントの実行
 			number = pstmt.executeUpdate();
