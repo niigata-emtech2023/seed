@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"import="model.entity.SpoFesBean,java.util.List"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,8 +20,11 @@
 	<%
 		}
 	%>
-	<jsp:useBean id="insert" scope="session" class="model.entity.SpoFesBean" />
-	内容<jsp:getProperty name="insert" property="task_info" /><br>
+	
+	<%
+	SpoFesBean spofes = (SpoFesBean)request.getAttribute("spofes");
+	%>
+	内容<%=spofes.getTaskName() %><br>
 
 	<form action="adminselect.jsp" method="POST">
 		<input type="submit" value="メニューに戻る">

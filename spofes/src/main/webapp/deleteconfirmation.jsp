@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"import="model.entity.SpoFesBean,java.util.List"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,12 +16,16 @@
         本当に削除しますか?
     <br>
     
-    <jsp:useBean id="delete" class="model.entity.SpoFesBean" scope="session"/>
+    <%
+	SpoFesBean spofes = (SpoFesBean)request.getAttribute("spofes");
+	%>
         内容<br>
-        <jsp:setProperty name="delete" property="task_info" param="task_info" />
+        <%=spofes.getTaskName() %><br>
         
         
-        <jsp:getProperty name="delete" property="task_info" /><br>
+         <%
+         spofes.setTaskName(spofes.getTaskName());
+         %>
  
     
     <form action = "adminmenu.jsp" method = "POST">
