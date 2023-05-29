@@ -9,7 +9,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import model.dao.InsertDAO;
 import model.entity.SpoFesBean;
@@ -41,10 +40,14 @@ public class InsertServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		        //セッションオブジェクトの取得
-				HttpSession session = request.getSession();
-				// リクエストパラメータの取得
-				SpoFesBean spofes = (SpoFesBean)session.getAttribute("spofes");
+		        
+		// リクエストオブジェクトのエンコーディング方式の指定
+				request.setCharacterEncoding("UTF-8");
+		
+		        String task_info = request.getParameter("task_info");
+		        SpoFesBean spofes = new SpoFesBean();
+		        spofes.setTaskName(task_info);
+		        
 				
 				// DAOの生成
 				InsertDAO dao = new InsertDAO();
