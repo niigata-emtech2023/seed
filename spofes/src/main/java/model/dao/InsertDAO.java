@@ -1,6 +1,7 @@
-/** model.dao.InsertDAO.java
-* @author i
-*/
+/** 
+ * model.dao.InsertDAO.java
+ * @author i
+ */
 package model.dao;
 
 
@@ -21,18 +22,18 @@ public class InsertDAO {
 		
 		int task_id = taskList.size();
 		
-		String sql = "INSERT INTO m_task VALUES(?,?)";
+		String sql = "INSERT INTO m_task(task_id,task_info) VALUES(?,?)";
 		
 		//データベースへの接続の取得、Statementの取得、SQLステートメントの実行
 		try (Connection con = ConnectionManager.getConnection();
 				PreparedStatement pstmt = con.prepareStatement(sql)) {
 
 			// DTOからのデータの取り出し
-			String taskName = bean.getTaskName();
+			String task_info = bean.getTaskName();
 
 			// プレースホルダへの値の設定
 			pstmt.setInt(1, task_id);
-			pstmt.setString(2, taskName);
+			pstmt.setString(2, task_info);
 
 			// SQLステートメントの実行
 			number = pstmt.executeUpdate();
