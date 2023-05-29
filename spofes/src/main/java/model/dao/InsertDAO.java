@@ -1,6 +1,7 @@
-/** model.dao.InsertDAO.java
-* @author i
-*/
+/** 
+ * model.dao.InsertDAO.java
+ * @author i
+ */
 package model.dao;
 
 
@@ -21,7 +22,7 @@ public class InsertDAO {
 		
 		int task_id = taskList.size();
 		
-		String sql = "INSERT INTO m_task VALUES(?,?)";
+		String sql = "INSERT INTO m_task(task_id,task_info) VALUES(?,?)";
 		
 		//データベースへの接続の取得、Statementの取得、SQLステートメントの実行
 		try (Connection con = ConnectionManager.getConnection();
