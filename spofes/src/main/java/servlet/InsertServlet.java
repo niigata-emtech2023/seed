@@ -63,7 +63,7 @@ public class InsertServlet extends HttpServlet {
 				request.setAttribute("number", number);
 
 				// リクエストの転送
-				RequestDispatcher rd = request.getRequestDispatcher("employee-registration-result.jsp");
+				RequestDispatcher rd = request.getRequestDispatcher("insertresult.jsp");
 				rd.forward(request, response);
 	}
 
