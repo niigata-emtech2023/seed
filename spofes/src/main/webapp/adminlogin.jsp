@@ -5,15 +5,22 @@
 <head>
 <meta charset="UTF-8">
 <title>ログイン</title>
+<link rel="stylesheet" href="./css/style.css"> 
 </head>
 <body>
+<div id="wrapper">
+<div class="s1">
+<div id="s5">
 『Spofes』を始めよう！
+</div>
 <form action="admin-login-servlet" method="POST">
-ID<br>
-<input type="text" name="id"><br>
-パスワード<br>
-<input type="password" name="pass"><br>
-<input type="submit" value="ログイン"><br>
+<div id="s2">ID</div><br>
+<div class="s4"><input type="text" placeholder="管理者番号" name="id"></div><br>
+<div id="s3">パスワード</div><br>
+<div class="s4"><input type="password"placeholder="パスワード（８桁以上）" name="pass"></div><br>
+<input class="button-panel" type="submit" value="ログイン"><br>
 </form>
+</div>
+</div>
 </body>
 </html>
