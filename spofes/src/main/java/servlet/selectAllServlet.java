@@ -15,17 +15,16 @@ import model.dao.selectAllDAO;
 import model.entity.SpoFesBean;
 
 /**
- * Servlet implementation class SelectAllServlet
+ * Servlet implementation class SelectAll
  */
 @WebServlet("/select-all-servlet")
-public class selectAllServlet extends HttpServlet {
+public class SelectAll extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public selectAllServlet() {
+	public SelectAll() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -42,13 +41,14 @@ public class selectAllServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
 		// セッションオブジェクトの取得
 		HttpSession session = request.getSession();
 
 		try {
 			selectAllDAO selectAllDao = new selectAllDAO();
 			List<SpoFesBean> taskList = selectAllDao.selectAll();
-			request.setAttribute("taskList", taskList);
+			session.setAttribute("taskList", taskList);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
