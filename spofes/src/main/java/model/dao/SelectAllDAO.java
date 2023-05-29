@@ -44,7 +44,7 @@ public class selectAllDAO {
 			while(res.next()) {
 				spoFesBean task = new spoFesBean();
 				task.setTaskId(sql);
->>>>>>> branch 'master' of https://github.com/niigata-emtech2023/seed
+				task.setTaskId(res.getString("task_id"));
 				task.setTaskName(res.getString("task_info"));
 				list.add(task);
 			}

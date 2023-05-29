@@ -21,15 +21,16 @@
 		for (SpoFesBean task : taskList) {
 	%>
 		<tr>
-			<td><%=i%></td>
+			<td><%=task.getTaskId()%></td>
 			<td><%=task.getTaskName()%></td>
 			
 		</tr>
 	<%
-		i++;
 		}
 	%>
 	</table>
+	
+	<%@ include file="task_button.jsp" %>
 	
 </body>
 </html>

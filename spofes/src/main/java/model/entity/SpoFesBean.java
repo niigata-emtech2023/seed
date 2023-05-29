@@ -19,6 +19,11 @@ public class SpoFesBean implements Serializable{
 	private String name;
 	
 	/**
+	 * 得点項目ID
+	 */
+	private String taskId; 
+	
+	/**
 	 * 得点項目名
 	 */
 	private String taskName;
@@ -59,6 +64,25 @@ public class SpoFesBean implements Serializable{
 	public void setName(String name) {
 		this.name = name;
 	}
+	
+	
+	/**
+	 * フィールドtaskIdの値を返します
+	 * @return
+	 */
+	public String getTaskId() {
+		return taskId;
+	}
+
+	
+	/**
+	 * フィールドtaskIdの値を設定します
+	 * @return
+	 */
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
+	}
+
 
 	/**
 	 * フィールドtaskNameの値を返します
@@ -123,5 +147,5 @@ public class SpoFesBean implements Serializable{
 	public void setTeamName(String teanName) {
 		this.teamName = teanName;
 	}
-
+	
 }
