@@ -16,10 +16,23 @@
     </form>
     
     <form action = "insertconfirmation.jsp" method = "POST">
-
+    
+    <%
+    if(session.getAttribute("task_info") == null){
+    %>
     <textarea name = "task_info" cols ="25" rows = "3">
     <%=session.getAttribute("task_info") %>
     </textarea><br>
+    <%
+    }else {
+    %>
+    
+    <textarea name = "task_info" cols ="25" rows = "3">
+    <%=session.getAttribute("task_info") %>
+    </textarea><br>
+    <% 
+    }
+    %>
         
         <input type = "submit" value = "登録">
         
