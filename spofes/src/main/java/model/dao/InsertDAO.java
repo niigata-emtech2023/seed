@@ -1,5 +1,4 @@
-/** 
- * model.dao.InsertDAO.java
+ /** model.dao.InsertDAO.java
  * @author i
  */
 package model.dao;
@@ -20,7 +19,7 @@ public class InsertDAO {
 		
 		List<SpoFesBean> taskList = new ArrayList<SpoFesBean>();
 		
-		int task_id = taskList.size();
+		int task_id = taskList.size() + 1;
 		
 		String sql = "INSERT INTO m_task(task_id,task_info) VALUES(?,?)";
 		
