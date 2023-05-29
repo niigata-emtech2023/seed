@@ -11,7 +11,7 @@ public class LoginAdminDAO {
 
 	public boolean login(String id,String pass,SpoFesBean bean)throws ClassNotFoundException, SQLException {
 
-		String sql = "SELECT * FROM m_user WHERE user_id = ? AND password = ?";
+		String sql = "SELECT * FROM m_admin WHERE user_id = ? AND password = ?";
 
 		// データベースへの接続の取得、PreparedStatementの取得
 		try(Connection con = ConnectionManager.getConnection();

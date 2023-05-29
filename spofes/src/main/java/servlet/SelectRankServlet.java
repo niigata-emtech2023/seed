@@ -45,13 +45,13 @@ public class SelectRankServlet extends HttpServlet {
 		
 		selectRankDAO dao = new selectRankDAO();
 		
-		List<SpoFesBean> list = new ArrayList<SpoFesBean>();
-		
 		SpoFesBean bean = new SpoFesBean();
 		
-		list = dao.select(bean);
+		List<SpoFesBean> list = new ArrayList<SpoFesBean>();
 		
 		HttpSession session = request.getSession();
+		
+		list = dao.select(bean);
 		session.setAttribute("teamrank", list);
 		
 		RequestDispatcher rd = request.getRequestDispatcher("select-all-servlet");

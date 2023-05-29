@@ -28,6 +28,7 @@ public class selectMyRankDAO {
 				while (res.next()) {
 					String teamName = res.getString("team_name");
 					int point = res.getInt("point");
+					
 					bean.setTeamName(teamName);
 					bean.setPoint(point);
 

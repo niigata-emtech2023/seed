@@ -68,7 +68,8 @@ public class AdminLoginServlet extends HttpServlet {
 
 			} else {
 				// 認証失敗
-				url = "Adminlogin.jsp";
+				url = "adminlogin.jsp";
+				request.setAttribute("err","IDかパスワードが間違っています。");
 			}
 
 		} catch (Exception e) {
