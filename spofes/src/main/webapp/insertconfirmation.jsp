@@ -20,7 +20,7 @@
 	%>
         内容<br>
         <%=task_info %><br>
-        
+    
     <form action = "insert.jsp" method = "POST">
         <input type = "submit" value = "戻る">
     </form>
