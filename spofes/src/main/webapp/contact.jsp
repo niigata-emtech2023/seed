@@ -47,7 +47,7 @@
 	<table border>
 		<tr>
 			<td>
-			<select name="coment_id">
+			<select name="comment_id">
 			<%
 			for (SpoFesBean task : taskList) {
 			%>
@@ -55,8 +55,9 @@
 			<%
 			}
 			%>
+			</select>
 			</td>
-			<td><textarea name="coment" cols="80" rows="4"></textarea></td>
+			<td><textarea name="comment" cols="80" rows="4"></textarea></td>
 		</tr>
 	</table>
 	<input type="submit" value="登録" >
