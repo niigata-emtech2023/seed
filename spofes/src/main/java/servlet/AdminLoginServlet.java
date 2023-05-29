@@ -1,7 +1,6 @@
 package servlet;
 
 import java.io.IOException;
-import java.sql.SQLException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -9,8 +8,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import model.dao.LoginAdminDAO;
+import model.entity.SpoFesBean;
 
 /**
  * Servlet implementation class AdminLoginServlet
@@ -47,20 +48,31 @@ public class AdminLoginServlet extends HttpServlet {
 		String id = request.getParameter("id");
 		String pass = request.getParameter("pass");
 		
-		LoginAdminDAO dao = new LoginAdminDAO();
-		
 		
 		try {
-			if(dao.login(id,pass)) {
-				url = "select-all-servlet";
+			// DAOの生成
+			LoginAdminDAO dao = new LoginAdminDAO();
+			SpoFesBean bean = new SpoFesBean();
+
+			// DAOの利用
+			if (dao.login(id, pass,bean)) {
+				// 認証成功
+				url = "select-rank-servlet";
+
+				// セッションオブジェクトの取得
+				HttpSession session = request.getSession();
+
+				// セッションスコープへの属性の設定
 				
-			}else {
-				url = "adminlogin.jsp";
-				
+				session.setAttribute("name", bean.getName());
+
+			} else {
+				// 認証失敗
+				url = "Adminlogin.jsp";
 			}
-		} catch (ClassNotFoundException | SQLException e) {
-			url = "adminlogin.jsp";
-			request.setAttribute("errcode","IDかパスワードが間違っています");
+
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 		
 		RequestDispatcher rd = request.getRequestDispatcher(url);

@@ -12,23 +12,23 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import model.dao.selectRankDAO;
+import model.dao.selectMyRankDAO;
 import model.entity.SpoFesBean;
 
 /**
- * Servlet implementation class SelectRankServlet
+ * Servlet implementation class SelectMyRankServlet
  */
-@WebServlet("/select-rank-servlet")
-public class SelectRankServlet extends HttpServlet {
+@WebServlet("/select-my-rank-servlet")
+public class SelectMyRankServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public SelectRankServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public SelectMyRankServlet() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -42,21 +42,21 @@ public class SelectRankServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		selectRankDAO dao = new selectRankDAO();
-		
-		List<SpoFesBean> list = new ArrayList<SpoFesBean>();
+
+		selectMyRankDAO dao = new selectMyRankDAO();
 		
 		SpoFesBean bean = new SpoFesBean();
-		
-		list = dao.select(bean);
-		
+
+		List<SpoFesBean> list = new ArrayList<SpoFesBean>();
+
 		HttpSession session = request.getSession();
-		session.setAttribute("teamrank", list);
-		
+		String name = (String)session.getAttribute("name");
+
+		list = dao.select(name,bean);
+		session.setAttribute("myteamrank", list);
+
 		RequestDispatcher rd = request.getRequestDispatcher("select-all-servlet");
 		rd.forward(request, response);
-		
 	}
 
 }

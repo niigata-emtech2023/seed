@@ -9,15 +9,15 @@ import java.util.List;
 
 import model.entity.SpoFesBean;
 
-public class selectRankDAO {
+public class selectMyRankDAO {
 
-	public List<SpoFesBean> select(SpoFesBean bean){
+	public List<SpoFesBean> select(String name,SpoFesBean bean) {
 
 		List<SpoFesBean> list = new ArrayList<SpoFesBean>();
 
 		try {
 
-			String sql = "SELECT * FROM m_rank r,m_team t WHERE r.team_id = t.team_id ORDER BY point";
+			String sql = "SELECT * FROM m_rank r,m_team t WHERE r.team_id = t.team_id";
 
 			try(Connection con = ConnectionManager.getConnection();
 					PreparedStatement pstmt =  con.prepareStatement(sql)){

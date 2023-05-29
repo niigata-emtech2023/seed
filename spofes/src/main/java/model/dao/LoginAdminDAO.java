@@ -9,7 +9,7 @@ import model.entity.SpoFesBean;
 
 public class LoginAdminDAO {
 
-	public boolean login(String id,String pass)throws ClassNotFoundException, SQLException {
+	public boolean login(String id,String pass,SpoFesBean bean)throws ClassNotFoundException, SQLException {
 
 		String sql = "SELECT * FROM m_user WHERE user_id = ? AND password = ?";
 
@@ -23,8 +23,6 @@ public class LoginAdminDAO {
 
 			// SQLステートメントの実行
 			ResultSet res = pstmt.executeQuery();
-			
-			SpoFesBean bean = new SpoFesBean();
 			bean.setName("name");
 			
 

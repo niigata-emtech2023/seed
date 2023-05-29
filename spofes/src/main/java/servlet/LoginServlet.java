@@ -59,7 +59,7 @@ public class LoginServlet extends HttpServlet {
 			// DAOの利用
 			if (loginDao.loginCheck(id, pass,bean)) {
 				// 認証成功
-				url = "select-all-servlet";
+				url = "select-my-rank-servlet";
 
 				// セッションオブジェクトの取得
 				HttpSession session = request.getSession();
