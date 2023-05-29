@@ -16,10 +16,10 @@
     </form>
     
     <form action = "insertconfirmation.jsp" method = "POST">
-    ・内容<br>
-        <textarea name = "task_info" cols ="50" rows = "3">
-        
-        </textarea>
+
+    <textarea name = "task_info" cols ="25" rows = "3">
+    <%=session.getAttribute("task_info") %>
+    </textarea><br>
         
         <input type = "submit" value = "登録">
         
