@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"import="model.entity.SpoFesBean,java.util.List"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,13 +15,9 @@
         <input type = "submit" value = "メニューに戻る">
     </form>
     
-    <%
-    SpoFesBean spofes = (SpoFesBean)request.getAttribute("spofes");
-    %>
     <form action = "insertconfirmation.jsp" method = "POST">
     ・内容<br>
         <textarea name = "task_info" cols ="50" rows = "3">
-        <%=spofes.getTaskName() %>
         
         </textarea>
         

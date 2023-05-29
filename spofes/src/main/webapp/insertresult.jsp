@@ -20,11 +20,10 @@
 	<%
 		}
 	%>
+
+	内容<%=session.getAttribute("task_info") %><br>
 	
-	<%
-	SpoFesBean spofes = (SpoFesBean)request.getAttribute("spofes");
-	%>
-	内容<%=spofes.getTaskName() %><br>
+	<% session.invalidate(); %>
 
 	<form action="adminselect.jsp" method="POST">
 		<input type="submit" value="メニューに戻る">

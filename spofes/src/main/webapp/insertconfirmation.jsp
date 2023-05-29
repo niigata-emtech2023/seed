@@ -7,9 +7,6 @@
 <title>得点項目登録確認画面</title>
 </head>
 <body>
-<%
-    request.setCharacterEncoding("UTF-8");
-%>
     
     &lt;登録確認画面&gt;
     <br>
@@ -17,15 +14,12 @@
     <br>
     
     <%
-	SpoFesBean spofes = (SpoFesBean)request.getAttribute("spofes");
+	    request.setCharacterEncoding("UTF-8");
+        String task_info = request.getParameter("task_info");
+        session.setAttribute("task_info" , task_info);
 	%>
         内容<br>
-        <%=spofes.getTaskName() %><br>
-        
-        <%
-        spofes.setTaskName(spofes.getTaskName());
-        %>
- 
+        <%=task_info %><br>
     
     <form action = "insert.jsp" method = "POST">
         <input type = "submit" value = "戻る">
