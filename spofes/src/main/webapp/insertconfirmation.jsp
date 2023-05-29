@@ -25,7 +25,7 @@
         <input type = "submit" value = "戻る">
     </form>
     
-    <form action = "Insert-servlet" method = "POST">
+    <form action = "insert-servlet" method = "POST">
         <input type = "submit" value = "確定">
     </form>
     
