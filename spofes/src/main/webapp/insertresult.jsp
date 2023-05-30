@@ -8,7 +8,7 @@
 <link rel = "stylesheet" href = "./css/insertresult.css">
 </head>
 <body>
-    <span id = s1>&lt;確定画面&gt;</span>
+    <span id = s1>&lt;確定画面&gt;</span><br>
 	<%
 		int number = (Integer) request.getAttribute("number");
 		if (number > 0) {
