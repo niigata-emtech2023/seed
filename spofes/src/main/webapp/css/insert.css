@@ -1,17 +1,23 @@
 @charset "UTF-8";
 body{
-	background-color: #ffffff;
+	background-color: #fffff0;
+	margin: 50px auto;
 	
 }
 
 #s1{
 	font-size: 350%;
 	text-align: left;
-	
+	margin-left: 200px;
+}
+
+#s2{
+	display: block;
 }
 
 .c1{
 	font-size: 300%;
+	margin-left: 200px;
 }
 
 #button1{
@@ -19,7 +25,7 @@ body{
 	background-color: #ffa500;
 	font-size: 200%;
 	text-align: right;
-	margin-left: 1200px;
+	margin-left: 1100px; 
 }
 
 #button2{
@@ -27,13 +33,15 @@ body{
 	background-color: #ffa500;
 	font-size: 200%;
 	text-align: right;
-	margin-left: 1300px;
+	margin-left: 1200px;
 	margin-top: 85px;
+	padding: 10px;
 }
 
 textarea{
 	resize: none;
 	text-align: left;
 	font-size: 300%;
-	margin-left: 50px;
+	margin-left: 200px;
+	border-color: #ffcc66;
 }

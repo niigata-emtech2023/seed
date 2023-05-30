@@ -11,10 +11,13 @@
     <%
     request.setCharacterEncoding("UTF-8");
     %>
-    <div id = s1>&lt;登録&gt;</div>
+    <div id = s2>
+    <div id = s1>&lt;新規得点項目登録&gt;</div>
     <form action = "adminselect.jsp" method = "POST">
         <input id = button1 type = "submit" value = "メニューに戻る">
     </form>
+    </div>
+    
     
     <form action = "insertconfirmation.jsp" method = "POST">
     
@@ -22,12 +25,12 @@
     if(session.getAttribute("task_info") == null){
     %>
     <div class = c1>・内容<br></div>
-    <textarea name = "task_info" cols ="40" rows = "5" ></textarea><br>
+    <textarea name = "task_info" cols ="50" rows = "5" ></textarea><br>
     <%
     }else {
     %>
     <div class = c1>・内容<br></div>
-    <textarea name = "task_info" cols ="40" rows = "5"><%=session.getAttribute("task_info")%></textarea><br>
+    <textarea name = "task_info" cols ="50" rows = "5"><%=session.getAttribute("task_info")%></textarea><br>
     <% 
     }
     %>
