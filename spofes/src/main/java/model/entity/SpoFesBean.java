@@ -21,7 +21,7 @@ public class SpoFesBean implements Serializable{
 	/**
 	 * 得点項目ID
 	 */
-	private String taskId; 
+	private int taskId; 
 	
 	/**
 	 * 得点項目名
@@ -39,10 +39,50 @@ public class SpoFesBean implements Serializable{
 	private int rank;
 	
 	/**
+	 * チームID
+	 */
+	
+	private int teamId;
+	
+	/**
 	 * チーム名
 	 */
 	private String teamName;
 	
+	/**
+	 * 加点項目
+	 */
+	private int pointAdd;
+	
+	/**
+	 * 減点項目
+	 */
+	private int pointSub;
+	
+	public int getTeamId() {
+		return teamId;
+	}
+
+	public void setTeamId(int team_id) {
+		this.teamId = team_id;
+	}
+
+	public int getPointAdd() {
+		return pointAdd;
+	}
+
+	public void setPointAdd(int pointAdd) {
+		this.pointAdd = pointAdd;
+	}
+
+	public int getPointSub() {
+		return pointSub;
+	}
+
+	public void setPointSub(int pointSub) {
+		this.pointSub = pointSub;
+	}
+
 	/**
 	 * SpoFesBeanの構築
 	 */
@@ -70,7 +110,7 @@ public class SpoFesBean implements Serializable{
 	 * フィールドtaskIdの値を返します
 	 * @return
 	 */
-	public String getTaskId() {
+	public int getTaskId() {
 		return taskId;
 	}
 
@@ -79,7 +119,7 @@ public class SpoFesBean implements Serializable{
 	 * フィールドtaskIdの値を設定します
 	 * @return
 	 */
-	public void setTaskId(String taskId) {
+	public void setTaskId(int taskId) {
 		this.taskId = taskId;
 	}
 
@@ -147,5 +187,7 @@ public class SpoFesBean implements Serializable{
 	public void setTeamName(String teanName) {
 		this.teamName = teanName;
 	}
+
+
 	
 }

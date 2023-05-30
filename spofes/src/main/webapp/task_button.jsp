@@ -1,6 +1,6 @@
 <%@ page pageEncoding="UTF-8"%>
 
-<form action="contact.jsp" method="post">
+<form action="contact-display-servlet" method="post">
 	<input type="submit" value="check欄">
 </form>
 <form action="insert.jsp" method="post">

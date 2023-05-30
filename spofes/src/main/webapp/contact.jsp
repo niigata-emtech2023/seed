@@ -8,8 +8,8 @@
 </head>
 <body>
 	<%
-	List<SpoFesBean> taskList = (List<SpoFesBean>) session.getAttribute("taskList");
-	List<SpoFesBean> teamList = (List<SpoFesBean>) session.getAttribute("teamList");
+	List<SpoFesBean> taskList = (List<SpoFesBean>) request.getAttribute("taskList");
+	List<SpoFesBean> teamList = (List<SpoFesBean>) request.getAttribute("teamList");
 	%>
 
 	<form action="select-all-servlet" method="post">
@@ -44,7 +44,7 @@
 
 	<br>
 	＜コメント＞<br>
-	<table border>
+	<table border>()
 		<tr>
 			<td>
 			<select name="comment_id">

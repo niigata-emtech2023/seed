@@ -11,8 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import model.dao.SelectAllDAO;
 import model.dao.TeamNameDAO;
-import model.dao.selectAllDAO;
 import model.entity.SpoFesBean;
 
 /**
@@ -46,9 +46,10 @@ public class ContactDisplayServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 
 		try {
-			selectAllDAO selectAllDao = new selectAllDAO();
+			SelectAllDAO selectAllDao = new SelectAllDAO();
 			List<SpoFesBean> taskList = selectAllDao.selectAll();
 			request.setAttribute("taskList", taskList);
+			
 			TeamNameDAO teamnameDao = new TeamNameDAO();
 			List<SpoFesBean> teamList = teamnameDao.getTeamName();
 			request.setAttribute("teamList", teamList);

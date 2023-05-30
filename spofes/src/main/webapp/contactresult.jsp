@@ -1,23 +1,25 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8" import="model.entity.SpoFesBean,java.util.List,java.util.ArrayList"%>
+    pageEncoding="UTF-8" import="model.entity.SpoFesBean,java.util.List"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>チェック内容確認画面</title>
+<title>登録結果</title>
 </head>
 <body>
 	<%
-	request.setCharacterEncoding("UTF-8");
+	List<SpoFesBean> taskList = (List<SpoFesBean>) request.getAttribute("taskList");
+	List<SpoFesBean> teamList = (List<SpoFesBean>) request.getAttribute("teamList");
+	int result=(Integer)request.getAttribute("count");
 	int point = 0;
-	
-
-
+	if(result>0){%>
+		登録完了しました
+	<%
+	}
 	%>
 
 	<%=request.getParameter("team_name")%>
-	<br>
-	 ＜チェック欄＞ これでよろしいでしょうか
+	
 	<table>
 		<tr>
 			<td>加点</td>
@@ -72,11 +74,8 @@
 	</td></tr>
 	</table>
 	
-	<form action="contact-servlet" method="post">
-		<input type="submit" value="確定">
-	</form>
-	<form action="contact-display-servlet" method="post">
-		<input type="submit" value="戻る">
+	<form action="select.jsp" method="post">
+		<input type="submit" value="メニューに戻る">
 	</form>
 </body>
 </html>
