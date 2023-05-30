@@ -1,0 +1,40 @@
+@charset "UTF-8";
+body{
+	background-color: #ffffff;
+	
+}
+
+#s1{
+	font-size: 350%;
+	text-align: left;
+	
+}
+
+.c1{
+	font-size: 300%;
+	text-align: left;
+}
+
+#button1{
+	border-color: #ffa500;
+	background-color: #ffa500;
+	font-size: 250%;
+	text-align: right;
+	margin-left: 1100px;
+}
+
+#button2{
+	border-color: #ffa500;
+	background-color: #ffa500;
+	font-size: 250%;
+	text-align: right;
+	margin-left: 1300px;
+	margin-top: 85px;
+}
+
+textarea{
+	resize: none;
+	text-align: left;
+	font-size: 500%;
+	margin-left: 50px;
+}
