@@ -18,7 +18,7 @@
         String task_info = request.getParameter("task_info");
         session.setAttribute("task_info" , task_info);
 	%>
-        内容<br>
+        内容：
         <%=task_info %><br>
     
     <form action = "insert.jsp" method = "POST">

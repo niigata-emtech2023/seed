@@ -21,7 +21,7 @@
 		}
 	%>
 
-	内容<%=session.getAttribute("task_info") %><br>
+	内容：<%=session.getAttribute("task_info") %><br>
 	
 	<% session.invalidate(); %>
 

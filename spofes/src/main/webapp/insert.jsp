@@ -26,6 +26,7 @@
     }else {
     %>
     
+    ・内容<br>
     <textarea name = "task_info" cols ="25" rows = "3">
     <%=session.getAttribute("task_info") %>
     </textarea><br>
