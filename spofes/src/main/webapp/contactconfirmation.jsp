@@ -68,6 +68,11 @@
 		<%=request.getParameter("comment")%>
 	</td></tr>
 	</table>
+	<%
+	request.setAttribute("comment_id",comment_id);
+	request.setAttribute("comment_id",comment_id);
+	%>
+	
 	<form action="contact-servlet">
 		<input type="submit" value="確定">
 	</form>

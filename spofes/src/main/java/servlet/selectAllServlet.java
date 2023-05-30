@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import model.dao.TeamNameDAO;
 import model.dao.selectAllDAO;
 import model.entity.SpoFesBean;
 
@@ -18,13 +19,13 @@ import model.entity.SpoFesBean;
  * Servlet implementation class SelectAll
  */
 @WebServlet("/select-all-servlet")
-public class SelectAll extends HttpServlet {
+public class selectAllServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public SelectAll() {
+	public selectAllServlet() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -49,6 +50,9 @@ public class SelectAll extends HttpServlet {
 			selectAllDAO selectAllDao = new selectAllDAO();
 			List<SpoFesBean> taskList = selectAllDao.selectAll();
 			session.setAttribute("taskList", taskList);
+			TeamNameDAO teamNameDao = new TeamNameDAO();
+			List<SpoFesBean> teamList = teamNameDao.getTeamName();
+			session.setAttribute("teamList",teamList);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
