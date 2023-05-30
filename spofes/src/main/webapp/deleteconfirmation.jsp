@@ -17,16 +17,12 @@
     <br>
     
     <%
-	SpoFesBean spofes = (SpoFesBean)request.getAttribute("spofes");
+	    request.setCharacterEncoding("UTF-8");
+        String task_info = request.getParameter("task_info");
+        session.setAttribute("task_info" , task_info);
 	%>
-        内容<br>
-        <%=spofes.getTaskName() %><br>
-        
-        
-         <%
-         spofes.setTaskName(spofes.getTaskName());
-         %>
- 
+        <%=task_info %><br>
+       
     
     <form action = "adminmenu.jsp" method = "POST">
         <input type = "submit" value = "戻る">

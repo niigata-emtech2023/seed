@@ -1,5 +1,5 @@
-/**
- * model.dao.DeleteDAO.java
+/** 
+* model.dao.DeleteDAO.java
  * @author i
  */
 
@@ -23,10 +23,10 @@ public int delete(SpoFesBean bean) throws SQLException, ClassNotFoundException{
 				PreparedStatement pstmt = con.prepareStatement(sql)) {
 
 			// DTOからのデータの取り出し
-			String taskName = bean.getTaskName();
+			String task_info = bean.getTaskName();
 
 			// プレースホルダへの値の設定
-			pstmt.setString(1, taskName);
+			pstmt.setString(1, task_info);
 
 			// SQLステートメントの実行
 			number = pstmt.executeUpdate();

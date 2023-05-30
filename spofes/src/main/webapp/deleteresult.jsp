@@ -7,7 +7,7 @@
 <title>得点項目削除完了画面</title>
 </head>
 <body>
-    &lt;削除確定画面&gt;
+    &lt;削除確定画面&gt;<br>
 	<%
 		int number = (Integer) request.getAttribute("number");
 		if (number > 0) {
@@ -20,10 +20,10 @@
 	<%
 		}
 	%>
-	<%
-	SpoFesBean spofes = (SpoFesBean)request.getAttribute("spofes");
-	%>
-	内容<%=spofes.getTaskName() %><br>
+
+	<%=session.getAttribute("task_info") %><br>
+	
+	<% session.invalidate(); %><br>
 
 	<form action="adminselect.jsp" method="POST">
 		<input type="submit" value="メニューに戻る">
