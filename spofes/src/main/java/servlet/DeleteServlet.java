@@ -9,9 +9,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import model.dao.DeleteDAO;
-import model.entity.SpoFesBean;
 
 /**
  * Servlet implementation class DeleteServlet
@@ -19,14 +19,14 @@ import model.entity.SpoFesBean;
 @WebServlet("/delete-servlet")
 public class DeleteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public DeleteServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public DeleteServlet() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -40,14 +40,14 @@ public class DeleteServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		String url=null;
 		// リクエストオブジェクトのエンコーディング方式の指定
 		request.setCharacterEncoding("UTF-8");
-		// リクエストパラメータの取得
-		String taskName = request.getParameter("taskName");
 		
-		SpoFesBean spofes = new SpoFesBean();
-		spofes.setTaskName(taskName);
-		
+		HttpSession session = request.getSession();
+		String task = (String)session.getAttribute("task");
+
 		// DAOの生成
 		DeleteDAO dao = new DeleteDAO();
 
@@ -55,17 +55,26 @@ public class DeleteServlet extends HttpServlet {
 
 		try {
 			// DAOの利用
-			number = dao.delete(spofes);
+			number = dao.delete(task);
+			if(number==1) {
+
+				// リクエストスコープへの属性の設定
+				request.setAttribute("number", number);
+				
+				url = "deleteresult.jsp";
+			}else {
+				url = "deleteconfirmation.jsp";
+				request.setAttribute("err","削除できませんでした。");
+				
+			}
+
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 		}
 
-		// リクエストスコープへの属性の設定
-		request.setAttribute("spofes", spofes);
-		request.setAttribute("number", number);
 
 		// リクエストの転送
-		RequestDispatcher rd = request.getRequestDispatcher("employee-registration-result.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("deleteresult.jsp");
 		rd.forward(request, response);
 	}
 

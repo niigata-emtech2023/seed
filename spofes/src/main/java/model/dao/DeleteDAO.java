@@ -1,5 +1,5 @@
-/** 
-* model.dao.DeleteDAO.java
+/**
+ * model.dao.DeleteDAO.java
  * @author i
  */
 
@@ -9,10 +9,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-import model.entity.SpoFesBean;
-
 public class DeleteDAO {
-public int delete(SpoFesBean bean) throws SQLException, ClassNotFoundException{
+public int delete(String task) throws SQLException, ClassNotFoundException{
 		
 		int number = 0; //処理件数
 		
@@ -22,11 +20,8 @@ public int delete(SpoFesBean bean) throws SQLException, ClassNotFoundException{
 		try (Connection con = ConnectionManager.getConnection();
 				PreparedStatement pstmt = con.prepareStatement(sql)) {
 
-			// DTOからのデータの取り出し
-			String task_info = bean.getTaskName();
-
 			// プレースホルダへの値の設定
-			pstmt.setString(1, task_info);
+			pstmt.setString(1, task);
 
 			// SQLステートメントの実行
 			number = pstmt.executeUpdate();
