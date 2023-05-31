@@ -4,19 +4,18 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>得点項目登録画面</title>
+<title>新規得点項目登録画面</title>
 <link rel = "stylesheet" href = "./css/insert.css">
 </head>
 <body>
     <%
     request.setCharacterEncoding("UTF-8");
     %>
-    <div id = s2>
+
     <div id = s1>&lt;新規得点項目登録&gt;</div>
     <form action = "adminselect.jsp" method = "POST">
         <input id = button1 type = "submit" value = "メニューに戻る">
-    </form>
-    </div>
+    </form><br>
     
     
     <form action = "insertconfirmation.jsp" method = "POST">

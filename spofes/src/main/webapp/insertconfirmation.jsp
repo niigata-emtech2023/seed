@@ -4,12 +4,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>得点項目登録確認画面</title>
+<title>新規得点項目登録確認画面</title>
 <link rel = "stylesheet" href = "./css/insertconfirmation.css">
 </head>
 <body>
     
-    <div id = s1>&lt;登録確認画面&gt;</div>
+    <div id = s1>&lt;新規得点項目登録確認画面&gt;</div>
     <br>
         <span id = s2>これでよろしいですか</span>
     <br>
@@ -20,8 +20,7 @@
         session.setAttribute("task_info" , task_info);
 	%>
 	<div class = task>
-        <span id = s3>内容</span>
-        <span id = s4><%=task_info %></span><br>
+        <span id = s3>内容</span><span id = s4><%=task_info %></span><br>
     </div>
 
     <div class = button>

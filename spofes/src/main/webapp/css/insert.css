@@ -6,26 +6,31 @@ body{
 }
 
 #s1{
-	font-size: 350%;
+	font-size: 300%;
 	text-align: left;
 	margin-left: 200px;
+	float: left;
+	width: 900px;
 }
 
 #s2{
-	display: block;
-}
-
-.c1{
-	font-size: 300%;
-	margin-left: 200px;
+	
 }
 
 #button1{
 	border-color: #ffa500;
 	background-color: #ffa500;
 	font-size: 200%;
-	text-align: right;
-	margin-left: 1100px; 
+	text-align: center;
+	margin-right: 200px; 
+	display: flex;
+	
+}
+
+.c1{
+	font-size: 250%;
+	text-align: left;
+	margin-left: 200px;
 }
 
 #button2{
@@ -35,7 +40,8 @@ body{
 	text-align: right;
 	margin-left: 1200px;
 	margin-top: 85px;
-	padding: 10px;
+	
+	padding: 10px 40px;
 }
 
 textarea{
@@ -44,4 +50,5 @@ textarea{
 	font-size: 300%;
 	margin-left: 200px;
 	border-color: #ffcc66;
+	
 }
