@@ -4,14 +4,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>得点項目編集画面</title>
 </head>
 <body>
 	<%
 request.setCharacterEncoding("UTF-8");
 %>
 
-	＜編集＞
+	＜得点項目編集画面＞
 	<br> ・内容
 	<br>
 	<%if(request.getParameter("task_id")!=null){ %>

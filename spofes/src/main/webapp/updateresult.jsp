@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>得点項目編集完了</title>
 </head>
 <body>
 <%
@@ -12,7 +12,7 @@ request.setCharacterEncoding("UTF-8");
 
 
 %>
-＜編集完了画面＞
+＜得点項目編集完了画面＞
 項目"<%=request.getAttribute("task_id")%>"番の内容を変更しました。<br>
 <tr><td>内容</td><td><%=request.getAttribute("update_info")%></td></tr>
 <form action="adminselect.jsp"　method="post">

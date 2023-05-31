@@ -4,14 +4,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>得点項目編集確認</title>
 </head>
 <body>
 <%
 request.setCharacterEncoding("UTF-8");
 %>
-＜編集確認画面＞<br>
-項目"<%=request.getParameter("task_id")%>"番の内容を変更します。
+＜得点項目編集確認画面＞<br>
+項目 <%=request.getParameter("task_id")%> 番の内容を変更します。
 この内容でよろしいですか？<br>
 <table>
 <tr><td>変更前</td><td><%=session.getAttribute("task_origin")%></td></tr>
