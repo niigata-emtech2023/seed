@@ -18,9 +18,10 @@
 		<%=bean.getTaskName() %>
 	</td>
 	<td>
-		<form action="updateconfirmation.jsp">
+		<form action="update-display-servlet" method="post">
 			<input type="submit"value="編集">
-			<input type="hidden" name="task" value="<%=bean.getTaskName() %>">
+			<input type="hidden" name="task_id" value="<%=bean.getTaskId() %>">
+			<input type="hidden" name="task_info" value="<%=bean.getTaskName() %>">
 		</form>
 	</td>
 	<td>

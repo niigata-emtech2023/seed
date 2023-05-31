@@ -1,7 +1,6 @@
 package servlet;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -11,24 +10,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import model.dao.SelectAllDAO;
-import model.dao.TeamNameDAO;
-import model.entity.SpoFesBean;
-
 /**
- * Servlet implementation class SelectAll
+ * Servlet implementation class UpdateDisplayServlet
  */
-@WebServlet("/select-all-servlet")
-public class selectAllServlet extends HttpServlet {
+@WebServlet("/update-display-servlet")
+public class UpdateDisplayServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * @see HttpServlet#HttpServlet()
-	 */
-	public selectAllServlet() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public UpdateDisplayServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -45,18 +40,15 @@ public class selectAllServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		// セッションオブジェクトの取得
 		HttpSession session = request.getSession();
-
-		try {
-			SelectAllDAO selectAllDao = new SelectAllDAO();
-			List<SpoFesBean> taskList = selectAllDao.selectAll();
-			session.setAttribute("taskList", taskList);
-			TeamNameDAO teamNameDao = new TeamNameDAO();
-			List<SpoFesBean> teamList = teamNameDao.getTeamName();
-			session.setAttribute("teamList",teamList);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		RequestDispatcher rd = request.getRequestDispatcher("select.jsp");
+		String task_id = request.getParameter("task_id");
+		String task_info = request.getParameter("task_info");
+		
+		request.setAttribute("task_id", task_id);
+		request.setAttribute("update_info",task_info);
+		session.setAttribute("task_origin", task_info);
+		
+		RequestDispatcher rd = request.getRequestDispatcher("update.jsp");
 		rd.forward(request, response);
 	}
+
 }
