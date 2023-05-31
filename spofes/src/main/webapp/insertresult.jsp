@@ -32,3 +32,6 @@
 	<form action="adminselect.jsp" method="POST">
 		<input id = s5 type="submit" value="メニューに戻る">
 	</form>
+	
+</body>
+</html>	
